@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %} Appointment {% endblock %}
+{% block content %}
+<div class = "container div_position1">
+    <h2> Booked Appointments </h2> 
+   </div>
+   <div class="div_position3">
+    <table class="table">
+        <thead class="table-info">
+          <tr>
+            <th scope="col">Customer Id</th>
+            <th scope="col">Property Id</th>
+            <th scope="col">Property Price</th>
+            <th scope="col">Property Area</th>
+            <th scope="col">Date time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+ </div>
+{% endblock%}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% block title %}user_login{% endblock %}
+{% block content %}
+<body class="bg">
+  <div  class="container">
+      <div class="row justify-content-center">
+  <div class="col-md-6 text-center mb-5 " style="margin-top: 50px">
+    <h1 class="heading-section " style="color: #fff" style="font: Montserrat"><b>Modern luxury properties at your finger tips!</b></h1>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <div class="login-wrap p-0">
+      <h3 class="mb-4 text-center " style="color: #fff" style="font:Times New Roman">Have an account?</h3>
+      <form action="/login" method="post" class="signin-form">
+              <div class="mb-3">
+                  <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email" type="text">
+              </div>
+              <div class="mb-3">
+                  <input class="form-control mx-auto w-auto " id="password" name="password" placeholder="Password" type="password">
+              </div>
+              <div class="w-100 text-center mb-3">
+                  <button class="btn btn-primary" type="submit">Log In</button>
+              </div>
+    <div class="w-100 text-center mb-3">
+    <a href="#" style="color: white">Forgot Password</a>
+    </div>
+          </div>
+      </form>
+      <p class="w-100 text-center mb-3" style="color:white">&mdash; Dont't have account? &mdash;</p>
+      <div class="social d-flex text-center">
+        <a href="/register" class="w-100 text-center mb-3" style="color:white"> Register</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+{% endblock %}

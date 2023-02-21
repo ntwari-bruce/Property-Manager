@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- other styles and scripts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+        <!-- linking the static files -->
+        <link href="/static/styles.css" rel="stylesheet">
+         <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Property Manager{% block title %}{% endblock %}</title>
+
+    </head>
+    <body>
+      {% if user.is_authenticated %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+          >
+          <span class="navbar-toggler"></span>
+        </button>
+            <div class="container" id="navbarSupportedContent">
+              
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    View Property
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/buy">Buy</a>
+                    <a class="dropdown-item" href="/rent">Rent</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favourite Property</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Appointments</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+              </ul>
+              </div>
+            </nav>
+              {% endif %}
+
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+            messages %} {% for category, message in messages %} {% if category ==
+            'error' %}
+            <div class="alert alert-danger alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+            <div class="container">{% block content %} {% endblock %}</div>
+
+    </body>
+</html>

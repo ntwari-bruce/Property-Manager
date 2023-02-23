@@ -43,7 +43,7 @@
               
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,10 +55,10 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Favourite Property</a>
+                    <a class="nav-link" href="/favourite">Favourite Property</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Appointments</a>
+                    <a class="nav-link" href="/appointment">Appointments</a>
                 </li>
               </ul>
               <ul class="navbar-nav">
@@ -89,6 +89,31 @@
             {% endif %} {% endfor %} {% endif %} {% endwith %}
 
             <div class="container">{% block content %} {% endblock %}</div>
+            <script>
+                const gallery = document.getElementById('image-gallery');
+                const images = gallery.querySelectorAll('.gallery-image');
+                const prevBtn = document.getElementById('prev');
+                const nextBtn = document.getElementById('next');
 
+                let currentImage = 0;
+
+                function showImage(n) {
+                  images[currentImage].style.display = 'none';
+                  currentImage = (n + images.length) % images.length;
+                  images[currentImage].style.display = 'block';
+                }
+
+                showImage(currentImage);
+
+                prevBtn.addEventListener('click', () => {
+                  showImage(currentImage - 1);
+                });
+
+                nextBtn.addEventListener('click', () => {
+                  showImage(currentImage + 1);
+                });
+
+            </script>
+            
     </body>
 </html>

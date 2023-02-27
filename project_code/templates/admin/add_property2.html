@@ -1,0 +1,139 @@
+{% extends admin_base_template %}
+
+{% block head_css %}
+  {{ super() }}
+  <!-- http://getbootstrap.com/docs/5.1/ -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- other styles and scripts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+   <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+  
+    .form-group.row {
+      margin-bottom: 10px;
+    }
+  
+    .form-group.row label {
+      margin-bottom: 10px;
+    }
+  
+    .form-group.row .col-xs-3 {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  
+    .form-group.row .form-control {
+      margin-top: 2px;
+    } 
+</style>
+ 
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container py-5 h-100 d-flex align-items-center justify-content-center">
+      <div class="col-xs-3">
+        <div class="text-center">
+          <h3 class="align-items-center">Add Property</h3>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <input class="form-control" id="ex2" type="text">
+            <label for="ex2"><b>Type</b></label>     
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="ex2" type="text">
+            <label for="ex2"><b>Area(sqft)</b></label>     
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="ex3" type="text">
+            <label for="ex3"><b>Location</b></label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <input class="form-control" id="ex1" type="text">
+            <label for="ex1"><b>Price</b></label>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="ex2" type="text">
+            <label for="ex2"><b>Developer</b></label>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="ex3" type="text">
+            <label for="ex3"><b>Bedroom</b></label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <input class="form-control" id="ex1" type="text">
+            <label for="ex1"><b>Bathroom</b></label>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="ex2" type="text">
+            <label for="ex2"><b>Furnishment</b></label>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="ex3" type="text">
+            <label for="ex3"><b>Parking</b></label>
+          </div>
+        </div>
+        <div class="col">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>        
+        <label for="ex5"><b>Address</b></label>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <input class="form-control" id="ex1" type="text">
+          <label for="ex1"><b>CCTV</b></label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="form-group col-xs-3">
+          <input type="file" class="form-control-file" id="image1">
+          <label for="image1"><b>Image 1</b></label>
+        </div>
+        <div class="form-group col-xs-3">
+          <input type="file" class="form-control-file" id="image1">
+          <label for="image1"><b>Image 2</b></label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="form-group col-xs-3">
+          <input type="file" class="form-control-file" id="image1">
+          <label for="image1"><b>Image 3</b></label>
+        </div>
+        <div class="form-group col-xs-3">
+          <input type="file" class="form-control-file" id="image1">
+          <label for="image1"><b>Image 4</b></label>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-start pt-3">
+        <button type="button" class="btn btn-warning btn-lg ms-2">Add Property</button>
+      </div>
+    </div>
+  </body>
+{% endblock %}

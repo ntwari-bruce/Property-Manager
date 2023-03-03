@@ -52,6 +52,7 @@
 
 {% block body %}
 <body>
+  <form action="{{ url_for('addpropertyview.index') }}" method="POST">
     <div class="container py-5 h-100 d-flex align-items-center justify-content-center">
       <div class="col-xs-3">
         <div class="text-center">
@@ -59,81 +60,86 @@
         </div>
         <div class="form-group row">
           <div class="col-xs-3">
-            <input class="form-control" id="ex2" type="text">
-            <label for="ex2"><b>Type</b></label>     
+            <input class="form-control" id="type" name="type" type="text">
+            <label for="type"><b>Type</b></label>     
           </div>
           <div class="col-xs-3">
-            <input class="form-control" id="ex2" type="text">
-            <label for="ex2"><b>Area(sqft)</b></label>     
+            <input class="form-control" id="area" name="area" type="text">
+            <label for="area"><b>Area(sqft)</b></label>     
           </div>
           <div class="col-xs-3">
-            <input class="form-control" id="ex3" type="text">
-            <label for="ex3"><b>Location</b></label>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-3">
-            <input class="form-control" id="ex1" type="text">
-            <label for="ex1"><b>Price</b></label>
-          </div>
-          <div class="col-xs-3">
-            <input class="form-control" id="ex2" type="text">
-            <label for="ex2"><b>Developer</b></label>
-          </div>
-          <div class="col-xs-3">
-            <input class="form-control" id="ex3" type="text">
-            <label for="ex3"><b>Bedroom</b></label>
+            <input class="form-control" id="location" name="location" type="text">
+            <label for="location"><b>Location</b></label>
           </div>
         </div>
         <div class="form-group row">
           <div class="col-xs-3">
-            <input class="form-control" id="ex1" type="text">
-            <label for="ex1"><b>Bathroom</b></label>
+            <input class="form-control" id="price" name="price" type="text">
+            <label for="price"><b>Price</b></label>
           </div>
           <div class="col-xs-3">
-            <input class="form-control" id="ex2" type="text">
-            <label for="ex2"><b>Furnishment</b></label>
+            <input class="form-control" id="developer" name="developer" type="text">
+            <label for="developer"><b>Developer</b></label>
           </div>
           <div class="col-xs-3">
-            <input class="form-control" id="ex3" type="text">
-            <label for="ex3"><b>Parking</b></label>
+            <input class="form-control" id="bedroom" name="bedroom" type="text">
+            <label for="bedroom"><b>Bedroom</b></label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-3">
+            <input class="form-control" id="bathroom" name="bathroom" type="text">
+            <label for="bathroom"><b>Bathroom</b></label>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="furnishment" type="text">
+            <label for="furnishment"><b>Furnishment</b></label>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" id="parking" name="parking" type="text">
+            <label for="parking"><b>Parking</b></label>
           </div>
         </div>
         <div class="col">
         <div class="input-group input-group-lg">
-          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+          <input type="text" class="form-control" id="address" name="address"aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>        
-        <label for="ex5"><b>Address</b></label>
+        <label for="address"><b>Address</b></label>
       </div>
       <div class="form-group row">
         <div class="col-xs-3">
-          <input class="form-control" id="ex1" type="text">
-          <label for="ex1"><b>CCTV</b></label>
+          <input class="form-control" id="cctv" name="cctv" type="text">
+          <label for="cctv"><b>CCTV</b></label>
+        </div>
+        <div class="col-xs-3">
+          <input class="form-control" id="category" name="category" type="text">
+          <label for="category"><b>Category</b></label>
         </div>
       </div>
       <div class="form-group row">
         <div class="form-group col-xs-3">
-          <input type="file" class="form-control-file" id="image1">
+          <input type="file" class="form-control-file" name="image1" id="image1">
           <label for="image1"><b>Image 1</b></label>
         </div>
         <div class="form-group col-xs-3">
-          <input type="file" class="form-control-file" id="image1">
-          <label for="image1"><b>Image 2</b></label>
+          <input type="file" class="form-control-file" name="image2" id="image2">
+          <label for="image2"><b>Image 2</b></label>
         </div>
       </div>
       <div class="form-group row">
         <div class="form-group col-xs-3">
-          <input type="file" class="form-control-file" id="image1">
-          <label for="image1"><b>Image 3</b></label>
+          <input type="file" class="form-control-file" name="image3" id="image3">
+          <label for="image3"><b>Image 3</b></label>
         </div>
         <div class="form-group col-xs-3">
-          <input type="file" class="form-control-file" id="image1">
-          <label for="image1"><b>Image 4</b></label>
+          <input type="file" class="form-control-file" name="image4" id="image4">
+          <label for="image4"><b>Image 4</b></label>
         </div>
       </div>
       <div class="col d-flex justify-content-start pt-3">
-        <button type="button" class="btn btn-warning btn-lg ms-2">Add Property</button>
+        <button type="submit" class="btn btn-warning btn-lg ms-2">Add Property</button>
       </div>
     </div>
+  </form>
   </body>
 {% endblock %}

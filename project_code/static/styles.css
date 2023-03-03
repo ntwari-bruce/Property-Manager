@@ -1,6 +1,8 @@
 body, html {
     height: 100%;
 }  
+
+
   .bg {
     /* The image used */
     background-image: url('background.jpg');
@@ -13,8 +15,23 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .img-with-margin {
+    margin-top: 40px;
+  }
+
+  .fixed-size-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+.card-margin{
+  margin-top: 20px;
+}
+  
   .div_position {
     margin-top: 50px; 
+    margin-bottom: 50px;
     display: flex;
     align-items: center; 
     justify-content: center;
@@ -38,52 +55,7 @@ body, html {
     margin-left: 20px;
     margin-right: 20px;
   }
-  .house {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
-    width: 300px;
-    height: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .house img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .house-details {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .house-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .house-description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .house-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ff5e5e;
-    margin-bottom: 10px;
-  }
-  
-  .house-area {
-    font-size: 14px;
-    color: #555;
-  }
+ 
   .button1{
     width: 100%; 
     height: 50px; 
@@ -95,64 +67,112 @@ body, html {
     border: none;
     text-align: center;
   }
-  .mod_card{
-    height:23rem;
-  }
- .mod_img{
-  height: 12rem; 
-  object-fit: cover;
- }
- .mod_card{
-  font-size: 0.85rem; 
-  width: 17rem;
- }
-.border-rad{
-  border-radius: 9px 9px 10px 10px;
-}
+  /* for the home page card*/
 
-.gallery-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  
+  body {
+      font-family: 'Montserrat', sans-serif;
+  
   }
 
-#image-gallery {
-  position: relative;
-}
+  
+  /* Category Ads */
 
-.gallery-image {
-  width: 100%;
-  display: none;
-}
-
-.gallery-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  text-align:center;
-  background-color:rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #5b5858;
-  cursor: pointer;
-  z-index: 1;
-  opacity: 0;
-}
-.gallery-arrow:hover{
-  opacity: 10;
-}
-
-#prev {
-  left: 5px;
-}
-
-#next {
-  right: 5px;
-}
+  #crds {
+     margin:30px 0px 30px 0px;
+     
+  }
+  
+  #crds .card-notify-badge {
+          position: absolute;
+          left: -10px;
+          top: -20px;
+          background: #f2d900;
+          text-align: center;
+          border-radius: 30px 30px 30px 30px; 
+          color: #000;
+          padding: 5px 10px;
+          font-size: 14px;
+  
+      }
+  
+  #crds .card-notify-year {
+          position: absolute;
+          right: -10px;
+          top: -20px;
+          background: #ff4444;
+          border-radius: 50%;
+          text-align: center;
+          color: #fff;      
+          font-size: 14px;      
+          width: 50px;
+          height: 50px;    
+          padding: 15px 0 0 0;
+  }
+  
+  
+  #crds .card-detail-badge {      
+          background: #0083a7;
+          text-align: center;
+          border-radius: unset;
+          color: #000;
+          padding: 5px 10px;
+          font-size: 14px;        
+      }
+  
+     
+  
+  #crds .card:hover {
+              background: #fff;
+              box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+              border-radius: 4px;
+              transition: all 0.3s ease;
+          }
+  
+  #crds .card-image-overlay {
+          font-size: 20px;
+       
+          
+      }
+  
+  
+  #crds .card-image-overlay span {
+              display: inline-block;              
+          }
+  
+  
+  #crds .crd-btn {
+          text-transform: uppercase;
+          width: 200px;
+          height: 40px;
+          border-radius: unset;
+          font-size: 16px;
+          line-height: 35px;
+          text-align: center;
+          border: 3px solid #e6de08;
+          display: block;
+          text-decoration: none;
+          margin: 20px auto 1px auto;
+          color: #000;
+          overflow: hidden;        
+          position: relative;
+          background-color: #e6de08;
+      }
+  
+  #crds .crd-btn:hover {
+              background-color: #e6de08;
+              color: #1e1717;
+              border: 2px solid #e6de08;
+              background: transparent;
+              transition: all 0.3s ease;
+              box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+          }
+  
+  #crds .crd-title h6 {
+          font-size: 14px;
+      }
 
   .form-outline {
     width: 100%;
@@ -165,9 +185,38 @@ body, html {
     
   }
  
-  .img-with-margin{
-    margin: 20px;
-  }
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+  
+    .form-group.row {
+      margin-bottom: 10px;
+    }
+  
+    .form-group.row label {
+      margin-bottom: 10px;
+    }
+  
+    .form-group.row .col-xs-3 {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  
+    .form-group.row .form-control {
+      margin-top: 2px;
+    } 
+ 
+
+    
+   
+
+
 
   
 

@@ -15,27 +15,22 @@
           </tr>
         </thead>
         <tbody>
+          {% for property in properties %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            <th scope="row">{{property.property_id}}</th>
+            <td>{{property.property_type}}</td>
+            <td>{{property.property_price}}</td>
+            <td>{{property.property_area}}</td>
+            <td>{{property.property_location}}</td>
+            <td>
+              <form action="/remove_favourite/{{property.property_id}}" method="post">
+                <button type="submit" class="btn btn-danger"><span>&times;</span></button>
+              </form>
+            </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-          </tr>
+          {% endfor %}
         </tbody>
+      
       </table>
  </div>
 {% endblock %}

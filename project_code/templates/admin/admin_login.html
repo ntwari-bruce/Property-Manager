@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block title %}user_login{% endblock %}
+{% block content %}
+<body class="bg">
+ 
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <div class="login-wrap p-0">
+        <h6 class="mb-2 text-center " style="color: #fff" style="font:Times New Roman">Sign-In</h6>
+      <form action="/admin/admin_login" method="post" class="signin-form">
+              <div class="mb-3">
+                  <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="username" type="text">
+              </div>
+              <div class="mb-3">
+                  <input class="form-control mx-auto w-auto " id="password" name="password" placeholder="Password" type="password">
+              </div>
+              <div class="w-100 text-center mb-3">
+                  <button class="btn btn-primary" type="submit">Log In</button>
+              </div>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+{% endblock %}

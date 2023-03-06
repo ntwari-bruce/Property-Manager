@@ -1,25 +1,38 @@
 {% extends "base.html" %} {% block title %} Buy {% endblock %}
-{% block content %} 
-<div>
-    <div class = "container div_position">
-     <form class="form-inline">
-     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-primary" type="submit">Search</button>
-  </form>
-   </div>
-   <div>
+{% block content %}
+<div class = "container div_position">
+    <form action="/buy" method="POST" class="form-inline">
+    <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+   <button class="btn btn-primary" type="submit">Search</button>
+ </form>
+  </div>
+  <div>
     <div class = "container div_position1">
-    <h2> Buy </h2> 
+    <h2> <b>Buy</b> </h2>
    </div>
-    <div class="house div_position2">
-    <img src="background.jpg" alt="House Image">
-   <div class="house-details">
-   <h3 class="house-title">Condor</h3>
-   <p class="house-description">This stunning house.</p>
-   <p class="house-price">$200 per night</p>
-   <p class="house-area">2000 sq. ft</p>
-   </div>
- <button type="button" class="btn btn-primary btn-sm">Small button</button>
- </div>
-</div> 
+<div class="container">
+	<div class="row" id="crds">
+    <!-- Category Card -->
+    {% for property in properties %}
+    <div class="col-md-3 card-margin">
+        <div class="card rounded">
+            <div class="card-image">
+                <img class="img-fluid fixed-size-img" src="static/house/{{property.image_1}}" />
+            </div>
+            <div class="card-image-overlay m-auto justify-content-center">
+                <span class="card-detail-badge ">{{property.type}}</span>
+            </div>
+            <div class="card-body text-start">
+                <div class="crd-title m-auto">
+                    <h6><b>Area:{{property.area}} Sqft</b></h6>
+                    <h6><b>Price:{{property.price}} $</b></h6>
+                    <h6><b>Location:{{property.location}}</b></h6>
+                </div>
+                <a class="crd-btn" href="/view_property/{{property.id}}">View</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
 {% endblock %}

@@ -42,11 +42,11 @@
             <div class="container" id="navbarSupportedContent">
               
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item  {% if request.path == '/' %}active{% endif %}">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item dropdown {% if request.path == '/buy' or request.path == '/rent' %} active {% endif %}">
+                  <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     View Property
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,11 +54,11 @@
                     <a class="dropdown-item" href="/rent">Rent</a>
                   </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Favourite Property</a>
+                <li class="nav-item {% if request.path == '/favourite' %}active{% endif %}">
+                    <a class="nav-link" href="/favourite">Favourite Property</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Appointments</a>
+                <li class="nav-item {% if request.path == '/appointment'%}active{% endif %}">
+                    <a class="nav-link" href="/appointment">Appointments</a>
                 </li>
               </ul>
               <ul class="navbar-nav">
@@ -89,6 +89,6 @@
             {% endif %} {% endfor %} {% endif %} {% endwith %}
 
             <div class="container">{% block content %} {% endblock %}</div>
-
+            
     </body>
 </html>
